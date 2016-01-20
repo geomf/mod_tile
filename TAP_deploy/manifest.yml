@@ -1,0 +1,28 @@
+#
+# Mod Tile Software for generating and serving mapping tiles
+# Copyright (c) 2016, Intel Corporation.
+#
+# This program is free software; you can redistribute it and/or modify it
+# under the terms and conditions of the GNU General Public License,
+# version 2, as published by the Free Software Foundation.
+#
+# This program is distributed in the hope it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+# more details.
+#
+---
+applications:
+- name: mod-tile-feeder
+  memory: 2048M
+  disk_quota: 4095M
+  timeout: 180
+  instances: 1
+  buildpack: https://github.com/cloudfoundry/binary-buildpack.git
+  command: './run.sh'
+  health-check-type: none
+  env:
+    LD_LIBRARY_PATH: "/home/vcap/app/lib/:/home/vcap/app/mod_tile/lib/:/home/vcap/app/mapnik/lib/"
+
+  
+

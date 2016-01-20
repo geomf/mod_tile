@@ -4,6 +4,7 @@ Makefile*
 *.lo
 *.slo
 .deps/
+.idea/
 .libs/
 autom4te.cache/
 config.guess

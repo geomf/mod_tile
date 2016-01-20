@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE Map[]>
+<Map srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over" font-directory="./fonts" background-color="rgba(255, 255, 255, 0)" maximum-extent="-20037508.34,-20037508.34,20037508.34,20037508.34">
+
+<Parameters>
+  <Parameter name="attribution"><![CDATA[Data © OpenStreetMap (and) contributors, CC-BY-SA]]></Parameter>
+  <Parameter name="bounds">-180,-85.0511,180,85.0511</Parameter>
+  <Parameter name="center">0,20,4</Parameter>
+  <Parameter name="format">png</Parameter>
+  <Parameter name="maxzoom">18</Parameter>
+  <Parameter name="minzoom">0</Parameter>
+  <Parameter name="name"><![CDATA[Feeder2]]></Parameter>
+</Parameters>
+
+
+<Style name="power_line_low" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([type] = 'underground_line')</Filter>
+    <LineSymbolizer stroke-width="0.8" stroke="#636363" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([type] = 'underground_line')</Filter>
+    <LineSymbolizer stroke-width="0.6" stroke="#636363" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>400000</MinScaleDenominator>
+    <Filter>([type] = 'underground_line')</Filter>
+    <LineSymbolizer stroke-width="0.4" stroke="#636363" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([type] = 'underground_line')</Filter>
+    <LineSymbolizer stroke-width="0.2" stroke="#636363" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
+    <Filter>([type] = 'underground_line')</Filter>
+    <LineSymbolizer stroke-width="0.1" stroke="#636363" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <Filter>([type] = 'overhead_line')</Filter>
+    <LineSymbolizer stroke-width="0.8" stroke="#b3b3b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <Filter>([type] = 'overhead_line')</Filter>
+    <LineSymbolizer stroke-width="0.6" stroke="#b3b3b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>400000</MinScaleDenominator>
+    <Filter>([type] = 'overhead_line')</Filter>
+    <LineSymbolizer stroke-width="0.4" stroke="#b3b3b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <Filter>([type] = 'overhead_line')</Filter>
+    <LineSymbolizer stroke-width="0.2" stroke="#b3b3b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
+    <Filter>([type] = 'overhead_line')</Filter>
+    <LineSymbolizer stroke-width="0.1" stroke="#b3b3b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>200000</MaxScaleDenominator>
+    <MinScaleDenominator>100000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.8" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>400000</MaxScaleDenominator>
+    <MinScaleDenominator>200000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.6" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>750000</MaxScaleDenominator>
+    <MinScaleDenominator>400000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.4" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>1500000</MaxScaleDenominator>
+    <MinScaleDenominator>750000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.2" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>3000000</MaxScaleDenominator>
+    <MinScaleDenominator>1500000</MinScaleDenominator>
+    <LineSymbolizer stroke-width="0.1" />
+  </Rule>
+</Style>
+<Layer name="power_line_low"
+  status="on"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>power_line_low</StyleName>
+    <Datasource>
+       <Parameter name="dbname"><![CDATA[DBNAME_PLACEHOLDER]]></Parameter>
+       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
+       <Parameter name="host"><![CDATA[HOST_PLACEHOLDER]]></Parameter>
+       <Parameter name="id"><![CDATA[power_line]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="password"><![CDATA[PASSWORD_PLACEHOLDER]]></Parameter>
+       <Parameter name="port"><![CDATA[PORT_PLACEHOLDER]]></Parameter>
+       <Parameter name="project"><![CDATA[foss4g-2011]]></Parameter>
+       <Parameter name="srs"><![CDATA[+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over]]></Parameter>
+       <Parameter name="table"><![CDATA[( SELECT way, power AS type
+  FROM planet_osm_ways
+  WHERE power IN ('overhead_line', 'underground_line')
+) AS data]]></Parameter>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="user"><![CDATA[USER_PLACEHOLDER]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="power_line_med" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'fuse')</Filter>
+    <LineSymbolizer stroke="#00b300" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'transformer')</Filter>
+    <LineSymbolizer stroke="#0000b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'switch')</Filter>
+    <LineSymbolizer stroke="#b30000" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'underground_line')</Filter>
+    <LineSymbolizer stroke="#636363" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>100000</MaxScaleDenominator>
+    <MinScaleDenominator>25000</MinScaleDenominator>
+    <Filter>([type] = 'overhead_line')</Filter>
+    <LineSymbolizer stroke="#b3b3b3" />
+  </Rule>
+</Style>
+<Layer name="power_line_med"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>power_line_med</StyleName>
+    <Datasource>
+       <Parameter name="dbname"><![CDATA[DBNAME_PLACEHOLDER]]></Parameter>
+       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
+       <Parameter name="host"><![CDATA[HOST_PLACEHOLDER]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="password"><![CDATA[PASSWORD_PLACEHOLDER]]></Parameter>
+       <Parameter name="port"><![CDATA[PORT_PLACEHOLDER]]></Parameter>
+       <Parameter name="table"><![CDATA[( SELECT way, power AS type
+  FROM planet_osm_ways
+  WHERE power IN ('fuse', 'transformer', 'switch', 'overhead_line', 'underground_line')
+) AS data]]></Parameter>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="user"><![CDATA[USER_PLACEHOLDER]]></Parameter>
+    </Datasource>
+  </Layer>
+
+<Style name="power_line_high" filter-mode="first">
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([type] = 'fuse')</Filter>
+    <LineSymbolizer stroke="#00b300" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([type] = 'transformer')</Filter>
+    <LineSymbolizer stroke="#0000b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([type] = 'switch')</Filter>
+    <LineSymbolizer stroke="#b30000" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([type] = 'underground_line')</Filter>
+    <LineSymbolizer stroke="#636363" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <Filter>([type] = 'overhead_line')</Filter>
+    <LineSymbolizer stroke="#b3b3b3" />
+  </Rule>
+  <Rule>
+    <MaxScaleDenominator>25000</MaxScaleDenominator>
+    <LineSymbolizer stroke="#000066" />
+  </Rule>
+</Style>
+<Layer name="power_line_high"
+  srs="+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over">
+    <StyleName>power_line_high</StyleName>
+    <Datasource>
+       <Parameter name="dbname"><![CDATA[DBNAME_PLACEHOLDER]]></Parameter>
+       <Parameter name="extent"><![CDATA[-20037508.34,-20037508.34,20037508.34,20037508.34]]></Parameter>
+       <Parameter name="geometry_field"><![CDATA[way]]></Parameter>
+       <Parameter name="host"><![CDATA[HOST_PLACEHOLDER]]></Parameter>
+       <Parameter name="key_field"><![CDATA[]]></Parameter>
+       <Parameter name="password"><![CDATA[PASSWORD_PLACEHOLDER]]></Parameter>
+       <Parameter name="port"><![CDATA[PORT_PLACEHOLDER]]></Parameter>
+       <Parameter name="table"><![CDATA[( SELECT way, power AS type
+  FROM planet_osm_ways
+) AS data]]></Parameter>
+       <Parameter name="type"><![CDATA[postgis]]></Parameter>
+       <Parameter name="user"><![CDATA[USER_PLACEHOLDER]]></Parameter>
+    </Datasource>
+  </Layer>
+
+</Map>
