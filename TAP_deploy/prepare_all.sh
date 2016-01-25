@@ -56,6 +56,7 @@ sudo apt-get install libpcre++-dev -y
 
 # neccessary packages for mod_tile
 sudo apt-get install dh-autoreconf apache2-dev libmapnik-dev -y
+# libmapnik-dev - install proper mapnik includes (C++ headers files) which are required to compile mod_tile
 
 ##################
 # Install Apache #
@@ -111,14 +112,17 @@ sed -i "152iLoadModule tile_module modules/mod_tile.so" httpd.conf
 ##################
 cd $SRC_DIR
 
+#download libmapnik2.2, because it contains required shared object libmapnik.so.2.2 and mapnik/input/postgis.input
 apt-get download libmapnik2.2
 dpkg-deb -x libmapnik2.2_2.2.0+ds1-6build2_amd64.deb ./mapnik/
 
 mkdir $VCAP_DIR/mapnik/lib/ -p
 cp mapnik/usr/lib/* $VCAP_DIR/mapnik/lib/ -r
+
+#there is unnecessary 2.2 folder in lib hierarchy so it must be removed
 mv $VCAP_DIR/mapnik/lib/mapnik/2.2/* $VCAP_DIR/mapnik/lib/mapnik/
 
-# create symlink to proper libmapnik.so
+# create symlink to proper libmapnik.so, because rendered require libmapnik.so.2.3
 cd $VCAP_DIR
 ln -s libmapnik.so.2.2 ./mapnik/lib/libmapnik.so.2.3
 
@@ -148,7 +152,8 @@ cp $INSTALL_DIR/usr/lib/apache2/modules/mod_tile.so $INSTALL_DIR/home/vcap/app/a
 ########################
 
 cd $VCAP_DIR
-tar zcvf ../../../../bin.tar.gz .
+tar zcf ../../../../bin.tar.gz .
+cd $PACKAGE_DIR
 
 
 
@@ -162,6 +167,7 @@ cp /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.54.0 $LIB_DIR
 cp /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.54.0 $LIB_DIR
 
 cp /usr/lib/libproj.so.0 $LIB_DIR
+cp /usr/lib/x86_64-linux-gnu/libmemcached.so.10 $LIB_DIR
 
 
 
