@@ -13,11 +13,13 @@
 # more details.
 #
 
-DBNAME=<put_your_db_name_here>
-HOST=<put_your_db_host_here>
-USER=<put_your_db_user_here>
-PASSWORD=<put_your_db_password_here>
-PORT=<put_your_db_port_here>
+
+JSON_PY="import json,sys; print json.loads(sys.stdin.read())['user-provided'][0]['credentials']"
+DBNAME=`echo $VCAP_SERVICES | python -c "$JSON_PY['database'];"`
+HOST=`echo $VCAP_SERVICES | python -c "$JSON_PY['host'];"`
+USER=`echo $VCAP_SERVICES | python -c "$JSON_PY['username'];"`
+PASSWORD=`echo $VCAP_SERVICES | python -c "$JSON_PY['password'];"`
+PORT=`echo $VCAP_SERVICES | python -c "$JSON_PY['port'];"`
 
 sed -i 's/CDATA\[DBNAME_PLACEHOLDER\]/CDATA\['$DBNAME'\]/g' style/Feeder2_OSMBright.xml
 sed -i 's/CDATA\[HOST_PLACEHOLDER\]/CDATA\['$HOST'\]/g' style/Feeder2_OSMBright.xml

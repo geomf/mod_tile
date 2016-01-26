@@ -13,7 +13,7 @@
 #
 ---
 applications:
-- name: mod-tile-feeder
+- name: mod-tile-foreground
   memory: 2048M
   disk_quota: 4095M
   timeout: 180
@@ -23,6 +23,8 @@ applications:
   health-check-type: none
   env:
     LD_LIBRARY_PATH: "/home/vcap/app/lib/:/home/vcap/app/mod_tile/lib/:/home/vcap/app/mapnik/lib/"
+services:
+- geomf-service
 
   
 

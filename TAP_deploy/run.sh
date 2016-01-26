@@ -13,6 +13,9 @@
 # more details.
 #
 
+#update style with data from VCAP_SERVICES
+./update_style.sh
+
 # unpack binaries
 tar xfz bin.tar.gz
 
