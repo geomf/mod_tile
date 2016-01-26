@@ -255,7 +255,8 @@ static enum protoCmd render(struct xmlmapconfig * map, int x, int y, int z, char
     try {
         Map map_parameterized = map->map; 
         if (map->parameterize_function) 
-            map->parameterize_function(map_parameterized, options); 
+            if(!map->parameterize_function(map_parameterized, options))
+                return cmdIgnore;
         mapnik::agg_renderer<mapnik::image_32> ren(map_parameterized,buf,map->scale);
         ren.apply();
     } catch (std::exception const& ex) {
