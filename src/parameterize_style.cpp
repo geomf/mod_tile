@@ -22,6 +22,8 @@ static bool parameterize_map_user(mapnik::Map &m, char * parameter) {
 
     int user_id,digits;
     if (sscanf(username, "%u%n", &user_id, &digits) != 1 || username[digits] != 0) return false; //Wrong param
+    if(user_id == 0)  //As admin
+        return true;
     sprintf(name_replace,"INNER JOIN feeders ON feeder_id=feeders.id WHERE feeders.user_id=%d AND",user_id);
     free(username);
 
