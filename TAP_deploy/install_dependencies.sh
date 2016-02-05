@@ -13,13 +13,20 @@
 # more details.
 #
 
-##############
-# Remove all #
-##############
-rm src -r
-rm install -r
-rm lib -r
-rm tiles -r
-rm renderd -r
 
-rm httpd.conf
+####################
+# Install packages #
+####################
+sudo apt-get update -qq
+
+# basic packages
+sudo apt-get install tar wget git-core build-essential -y
+#build esentials - install make and fix paths for ICU :P
+
+# neccessary packages for apache
+sudo apt-get install libpcre++-dev -y
+
+# neccessary packages for mod_tile
+sudo apt-get install dh-autoreconf apache2-dev libmapnik-dev -y
+# libmapnik-dev - install proper mapnik includes (C++ headers files) which are required to compile mod_tile
+

@@ -35,3 +35,8 @@ m4/ltoptions.m4
 m4/ltsugar.m4
 m4/ltversion.m4
 m4/lt~obsolete.m4
+TAP_deploy/install
+TAP_deploy/lib
+TAP_deploy/src
+TAP_deploy/bin.tar.gz
+TAP_deploy/httpd.conf
