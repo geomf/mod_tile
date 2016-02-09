@@ -140,6 +140,12 @@ cd $PACKAGE_DIR
 
 
 
+#########################
+# Install required Libs #
+#########################
+
+apt-get install libmemcached-dev
+
 ######################
 # Copy required Libs #
 ######################
@@ -151,6 +157,3 @@ cp /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.54.0 $LIB_DIR
 
 cp /usr/lib/libproj.so.0 $LIB_DIR
 cp /usr/lib/x86_64-linux-gnu/libmemcached.so.10 $LIB_DIR
-
-
-
